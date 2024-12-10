@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="navigation"></div>
+    <div class="header">
+      <button class="back-button">
+        <i class="fa-solid fa-chevron-left"></i
+        ><a href="../reserveren/index.html">Ga terug</a>
+      </button>
+
+      <div class="procesbar">
+        <span>1</span>
+        <p>Campingplek</p>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+
+      <div class="procesbar active-procesbar">
+        <span>2</span>
+        <p>Gegevens</p>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+
+      <div class="procesbar">
+        <span>3</span>
+        <p>Betaling</p>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+      <div class="procesbar">
+        <span>4</span>
+        <p>Overzicht</p>
+      </div>
+    </div>
+    <div class="mainContainer">
+      <div class="mainContainer__left">
+        <form id="bookingForm">
+          <div class="personalDetails">
+            <h1 class="title">Vul je gegevens in</h1>
+            <p>
+              We gebruiken deze gegevens om je te informeren over je boeking.
+            </p>
+            <div class="line"></div>
+            <div class="inputcontainer">
+              <p>Voornaam <span>*</span></p>
+              <input
+                id="firstName"
+                min="1"
+                max="90"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}"
+                placeholder="Typ je voornaam"
+                type="text"
+              />
+            </div>
+
+            <div class="inputcontainer">
+              <p>Achternaam<span>*</span></p>
+              <input
+                id="lastName"
+                placeholder="Typ je achternaam"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}"
+                type="text"
+              />
+            </div>
+
+            <div class="inputcontainer">
+              <p>Geboortedatum<span>*</span></p>
+              <div class="date-picker">
+                <select id="day" name="day" required>
+                  <option value="">Kies dag</option>
+                  <!-- Days will be dynamically generated in JavaScript -->
+                </select>
+
+                <select id="month" name="month" required>
+                  <option value="">Kies maand</option>
+                  <!-- Months will be dynamically generated in JavaScript -->
+                </select>
+
+                <select id="year" name="year" required>
+                  <option value="">Kies jaar</option>
+                  <!-- Years will be dynamically generated in JavaScript -->
+                </select>
+              </div>
+            </div>
+
+            <div class="inputcontainer">
+              <p>E-mail <span>*</span></p>
+              <input placeholder="Typ je e-mail" id="email" type="email" />
+            </div>
+
+            <div class="inputcontainer">
+              <p>Bevestig e-mail <span>*</span></p>
+              <input
+                placeholder="Typ je e-mail"
+                id="email-confirm"
+                type="email"
+              />
+            </div>
+
+            <div class="inputcontainer">
+              <p>Telefoonnummer <span>*</span></p>
+
+              <input
+                placeholder="Typ je telefoonnummer"
+                id="phoneNumber"
+                type="tel"
+                required
+              />
+              <span id="valid-msg" class="hide"></span>
+              <span id="error-msg" class="hide just-validate-error"></span>
+            </div>
+          </div>
+
+          <div class="adresGegevens">
+            <h1 class="title">Adres</h1>
+            <div class="line"></div>
+            <div class="inputcontainer">
+              <p>Land <span>*</span></p>
+
+              <select class="selectCountry">
+                <option>Nederland</option>
+                <option>Duitsland</option>
+              </select>
+            </div>
+
+            <div class="postalCode-number">
+              <div class="inputSmall">
+                <p>Postcode <span>*</span></p>
+                <input placeholder="Postcode" type="text" />
+              </div>
+              <div class="inputSmall">
+                <p>Huisnummer <span>*</span></p>
+                <input placeholder="Huisnummer" type="text" />
+              </div>
+            </div>
+            <div class="inputcontainer">
+              <p>Straatnaam <span>*</span></p>
+              <input placeholder="Straatnaam" type="text" />
+            </div>
+            <div class="inputcontainer">
+              <p>Plaatsnaam <span>*</span></p>
+              <input placeholder="Plaatsnaam" type="text" />
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="terms" id="terms" />
+                Ik accepteer de
+                <a href="/algemene-voorwaarden" target="_blank"
+                  >algemene voorwaarden</a
+                >
+                en het
+                <a href="/privacybeleid" target="_blank">privacybeleid</a>.
+              </label>
+            </div>
+            <br />
+            <div></div>
+          </div>
+          <div class="buttonContainer">
+            <button class="nextButton">
+              <a>Ga verder</a><i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mainContainer__right">
+        <div class="overviewCard">
+          <h2>Overzicht</h2>
+          <div class="placeInfo">
+            <img src="camping1.jpg" alt="" />
+            <div class="placeInfo__text">
+              <h3>Plek 1</h3>
+              <p>★★★★</p>
+              <p><span>€38</span>per nacht</p>
+            </div>
+          </div>
+          <div class="reservationInfo">
+            <div class="departure-arrival">
+              <div class="arrival">
+                <h3>Aankomst</h3>
+                <div>
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <p>1 jul. 2024</p>
+                </div>
+                <p class="checkin-checkout">Vanaf 11:00</p>
+              </div>
+              <div class="departure">
+                <h3>Vertrek</h3>
+                <div>
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <p>5. jul. 2024</p>
+                </div>
+                <p class="checkin-checkout">Tot 11:00</p>
+              </div>
+            </div>
+            <div class="stay-duration">
+              <i class="fa-regular fa-clock"></i>
+              <div>
+                <h3>Verblijfsduur</h3>
+                <p>7 nachten</p>
+              </div>
+            </div>
+            <div class="guests">
+              <i class="fa-solid fa-user-group"></i>
+              <div>
+                <h3>Gasten</h3>
+                <p>4 gasten</p>
+              </div>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="price-info">
+            <h3>Prijsinformatie</h3>
+            <div class="costs">
+              <p>€145x10</p>
+              <p>€1450</p>
+            </div>
+            <div class="costs">
+              <p>Service kosten</p>
+              <p>€32</p>
+            </div>
+            <div class="line"></div>
+            <div class="total-price">
+              <p>Totaal</p>
+              <p>€1482</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <script>
+      const validate = new window.JustValidate("#bookingForm");
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
